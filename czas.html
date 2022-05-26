@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Proszę podać datę</p>
+    <input type="date" name="data" id="data">Twoja Data (dzień, miesiąć, rok)<br>
+    <button onclick=czas() id="guzik">ile czasu minęło</button>
+
+    <br>
+    <script>
+        function czas() { 
+            console.log("dziala");
+            let teraz = new Date();
+            let podana = new Date(document.getElementById("data").value);
+
+            let ilosc = teraz - podana;
+            ilosc = Math.floor(ilosc / (1000 * 60 * 60 * 24));
+            alert("minęlo " + ilosc + " dni");
+        }
+    </script>
+
+</body>
+
+</html>
